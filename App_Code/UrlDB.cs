@@ -37,6 +37,7 @@ namespace UrlShortner.App_Code
             
         }
 
+        //save new generated shortened url to DB
         public void SaveShortUrl()
         {
             using(SqlConnection sqlCon = new SqlConnection(ConnStr))
@@ -55,12 +56,13 @@ namespace UrlShortner.App_Code
                 sqlCon.Close();
             }
         }
-        
+                
         public void CreateNewShortUrl()
         {
             this.UrlShort = Guid.NewGuid().ToString().Substring(0, 6);
         }
 
+        //check if the searched long url has already had a shortened version created, if yes then get those details from the DB
         public bool CheckForLongUrl()
         {
             bool urlExists = false;
@@ -93,6 +95,7 @@ namespace UrlShortner.App_Code
             return urlExists;
         }
 
+        //get shortened url details from the DB
         public void GetByShortUrl(string _shortUrl)
         {
             using(SqlConnection sqlCon = new SqlConnection(ConnStr))
@@ -119,6 +122,7 @@ namespace UrlShortner.App_Code
             }
         }
 
+        //confirm that the searched url actually exists by trying to connect to it
         public static bool UrlExists(string url)
         {
             try

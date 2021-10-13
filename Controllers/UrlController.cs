@@ -17,6 +17,7 @@ namespace UrlShortner.Controllers
 
         public ActionResult UrlRedirect(string id)
         {
+            //if their is a parameter and the shortened url can be found in the DB, redirect to to full url else redirect to homepage
             if (!string.IsNullOrWhiteSpace(id))
             {
                 UrlDB urlShort = new UrlDB();

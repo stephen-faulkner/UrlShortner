@@ -17,6 +17,7 @@ namespace UrlShortner
 
         protected void btnGenerateShortUrl_Click(object sender, EventArgs e)
         {
+            //make sure url is entered and is valid before creating shortened version
             string longUrl = txtFullUrl.Text;
             if (string.IsNullOrWhiteSpace(txtFullUrl.Text))
             {
