@@ -532,6 +532,7 @@
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="Views\web.config" />
+    <Content Include="SQL DB Backup\UrlShortner.bak" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Code\UrlDB.cs" />
